@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logo from '../V.png'
+import './Home.css'
 
 function Home() {
   const navigate = useNavigate();
@@ -17,14 +19,26 @@ function Home() {
   return (
     <div>
       {/* Landing section */}
-      <section style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <button
+      <header>
+        <img src={logo} alt="logo" className='logo'></img>
+        <h2 className='title'>Velora</h2>
+        <button className='headerStart'
           onClick={scrollToOptions}
-          style={{ fontSize: '2rem', padding: '1rem 2rem', cursor: 'pointer' }}
         >
-          Start Now
+          Start Voting
         </button>
-      </section>
+      </header>
+      <div className='headerBack'>
+        <h1 className='welcomeText1'>Secure, Transparent Voting </h1><h1 className='welcomeText1' id='nextLine'>for the</h1>
+        <h1 className='welcomeText2'>Future</h1>
+        <h3 className='description'>Blockchain-powered elections for governments, corporations, and</h3>
+        <h3 className='description' id='additional'>organizations worldwide.</h3>
+        <button className='startVoting'
+          onClick={scrollToOptions}
+        >
+          Start a Voting Session
+        </button>
+      </div>
 
       {/* Options section */}
       <section
